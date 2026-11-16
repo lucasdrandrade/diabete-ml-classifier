@@ -1,0 +1,8 @@
+modelo,hiperparâmetro,valor
+Regressão Logística,C,0.1
+KNN,metric,euclidean
+KNN,n_neighbors,43
+KNN,weights,distance
+Random Forest,max_depth,4
+Random Forest,max_features,3
+Random Forest,min_samples_split,2
