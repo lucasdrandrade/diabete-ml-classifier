@@ -1,1 +1,1 @@
-"""Diabetes prediction project: shared configuration and utilities."""
+"""Projeto de predição de diabetes: configuração e utilitários compartilhados."""

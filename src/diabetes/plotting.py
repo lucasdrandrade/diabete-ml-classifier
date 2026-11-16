@@ -1,7 +1,7 @@
-"""Shared figure styling so every chart in the project looks consistent.
+"""Estilo compartilhado das figuras, para que todos os gráficos do projeto sejam consistentes.
 
-Colors come from a validated categorical palette (colorblind-safe pair):
-class 0 is always blue and class 1 is always orange, in every figure.
+As cores vêm de uma paleta categórica validada (par seguro para daltonismo):
+a classe 0 é sempre azul e a classe 1 é sempre laranja, em todas as figuras.
 """
 
 import matplotlib.pyplot as plt
@@ -10,10 +10,10 @@ from matplotlib.colors import LinearSegmentedColormap
 from diabetes.config import FIGURES_DIR
 
 CLASS_COLORS = {0: "#2a78d6", 1: "#eb6834"}
-CLASS_LABELS = {0: "0 - No diabetes", 1: "1 - Diabetes"}
+CLASS_LABELS = {0: "0 - Sem diabetes", 1: "1 - Com diabetes"}
 NEUTRAL = "#898781"
 
-# Diverging map for correlations: blue (negative) <-> gray (zero) <-> red (positive).
+# Mapa divergente para correlações: azul (negativa) <-> cinza (zero) <-> vermelho (positiva).
 DIVERGING_CMAP = LinearSegmentedColormap.from_list(
     "blue_gray_red", ["#184f95", "#2a78d6", "#f0efec", "#e34948", "#a32a2a"]
 )
@@ -25,7 +25,7 @@ _AXIS = "#c3c2b7"
 
 
 def apply_style() -> None:
-    """Set recessive grid/axes and readable text for all subsequent plots."""
+    """Define grade e eixos discretos e texto legível para todos os gráficos seguintes."""
     plt.rcParams.update({
         "figure.facecolor": "#fcfcfb",
         "axes.facecolor": "#fcfcfb",
@@ -53,6 +53,6 @@ def apply_style() -> None:
 
 
 def save_fig(fig, name: str) -> None:
-    """Save a figure as PNG under results/figures/ (used by the report)."""
+    """Salva a figura como PNG em results/figures/ (usada no relatório)."""
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(FIGURES_DIR / f"{name}.png")
